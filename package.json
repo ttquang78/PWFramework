@@ -28,6 +28,9 @@
     "prettier": "^3.8.1"
   },
   "lint-staged": {
-    "tests/**/*.ts": "eslint --fix"
+    "tests/**/*.ts": [
+      "prettier --write",
+      "eslint --fix"
+    ]
   }
 }
