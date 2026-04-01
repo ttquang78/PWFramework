@@ -1,0 +1,15 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:playwright/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
+  "root": true,
+  "rules": {
+    "playwright/no-skipped-test": "warn", // Cảnh báo khi quên bỏ .skip
+    "playwright/expect-expect": "error",   // Bắt buộc phải có assert (expect) trong test
+    "no-console": "warn"                   // Cảnh báo nếu lạm dụng console.log
+  }
+}
