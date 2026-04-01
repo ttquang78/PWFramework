@@ -2,7 +2,8 @@
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:playwright/recommended"
+    "plugin:playwright/recommended",
+    "plugin:prettier/recommended"
   ],
   "parser": "@typescript-eslint/parser",
   "plugins": ["@typescript-eslint"],
@@ -10,6 +11,9 @@
   "rules": {
     "playwright/no-skipped-test": "warn", // Cảnh báo khi quên bỏ .skip
     "playwright/expect-expect": "error",   // Bắt buộc phải có assert (expect) trong test
-    "no-console": "warn"                   // Cảnh báo nếu lạm dụng console.log
+    "no-console": "warn",                   // Cảnh báo nếu lạm dụng console.log
+    "prettier/prettier": "error",
+    "playwright/no-wait-for-timeout": "warn", // Không khuyến khích dùng waitForTimeout(3000)
+    "playwright/prefer-lowercase-title": "warn" // Khuyên dùng tiêu đề test chữ thường
   }
 }
