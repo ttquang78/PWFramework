@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/test';
 test('has title', async ({ page }, testInfo) => {
   await page.goto('https://playwright.dev/');
 
-  // Chụp ảnh màn hình đính kèm vào báo cáo
+  // Chụp ảnh màn hình đính kèm vào báo cáo ok
   const screenshot = await page.screenshot();
   await testInfo.attach('Screenshot', {
     body: screenshot,
