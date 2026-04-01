@@ -4,7 +4,7 @@ test('has title', async ({ page }, testInfo) => {
   await page.goto('https://playwright.dev/');
 
   // Chụp ảnh màn hình đính kèm vào báo cáo
-  const screenshot = page.screenshot();
+  const screenshot = await page.screenshot();
   await testInfo.attach('Screenshot', {
     body: screenshot,
     contentType: 'image/png',
