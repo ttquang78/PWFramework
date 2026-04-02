@@ -53,5 +53,5 @@ test('learn locators - Lesson 1', async ({ page }) => {
   await page.getByRole('button', { name: 'Delete' }).click();
   await page.getByRole('link', { name: 'Trở về trang chủ' }).click();
   await expect(page.getByRole('heading', { name: 'Tài liệu học automation test' })).toBeVisible();
-  await page.pause();
+  // await page.pause();
 });
