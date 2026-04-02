@@ -8,6 +8,9 @@ import path from 'path';
  */
 dotenv.config({ path: path.resolve(__dirname, '.env') });
 
+const envPath = `.env.${process.env.ENV || 'test'}`;
+dotenv.config({ path: envPath });
+
 /**
  * See https://playwright.dev/docs/test-configuration.
  */
@@ -52,7 +55,7 @@ export default defineConfig({
   /* Configure projects for major browsers */
   projects: [
     {
-      name: 'chromium',
+      name: 'chrome',
       use: { ...devices['Desktop Chrome'] },
     },
 
@@ -62,8 +65,12 @@ export default defineConfig({
     },
 
     {
-      name: 'webkit',
+      name: 'safari',
       use: { ...devices['Desktop Safari'] },
+    },
+    {
+      name: 'Microsoft Edge',
+      use: { ...devices['Desktop Edge'], channel: 'msedge' },
     },
 
     /* Test against mobile viewports. */
@@ -74,16 +81,6 @@ export default defineConfig({
     // {
     //   name: 'Mobile Safari',
     //   use: { ...devices['iPhone 12'] },
-    // },
-
-    /* Test against branded browsers. */
-    // {
-    //   name: 'Microsoft Edge',
-    //   use: { ...devices['Desktop Edge'], channel: 'msedge' },
-    // },
-    // {
-    //   name: 'Google Chrome',
-    //   use: { ...devices['Desktop Chrome'], channel: 'chrome' },
     // },
   ],
 
