@@ -26,6 +26,9 @@ on:
       config-path:
         required: false
         type: string
+      environment:
+        required: true
+        type: string
 jobs:
   test:
     timeout-minutes: 60

@@ -1,0 +1,23 @@
+name: Demo trigger Playwright Tests
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Select the environment to run tests against'
+        required: true
+        default: 'stg'
+        type: choice
+        options:
+          - test
+          - stg
+          - prod
+      reason:
+        description: 'Manually trigger with reason (optional)'
+        required: false
+        default: 'Checking PW tests by personal request'
+jobs:
+  call-my-workflow:
+    uses: ./.github/workflows/playwright.yml
+    with:
+      environment: ${{ github.event.inputs.environment }}
+      reason: ${{ github.event.inputs.reason }}
