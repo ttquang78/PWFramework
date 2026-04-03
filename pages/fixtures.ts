@@ -18,7 +18,7 @@ export const test = base.extend<MyFixtures>({
     console.log(`[Setup] Đang đi tới trang Login cho: ${testInfo.title}`);
 
     // Tự động đi tới trang login (lấy URL từ biến môi trường hoặc hằng số)
-    await page.goto(process.env.BASE_URL + '/login');
+    await page.goto(process.env.BASE_URL!);
 
     // Chạy nội dung bài test
     await use(page);

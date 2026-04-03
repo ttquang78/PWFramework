@@ -15,7 +15,7 @@ export class LoginPage extends BasePage {
   }
 
   async goto() {
-    await this.page.goto('/login');
+    await this.page.goto('https://material.playwrightvn.com/12-dom-nested.html');
   }
 
   async login(email: string, pass: string) {
