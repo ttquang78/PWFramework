@@ -14,7 +14,8 @@
     "report": "npx playwright show-report",
     "test:test:chrome": "cross-env ENV=test npx playwright test --project=chrome",
     "test:stg:firefox": "cross-env ENV=stg npx playwright test --project=firefox",
-    "test:prod:all": "cross-env ENV=prod npx playwright test"
+    "test:prod:all": "cross-env ENV=prod npx playwright test",
+    "load-demo": "k6 run load-tests/demo-load.js"
   },
   "keywords": [],
   "author": "",
